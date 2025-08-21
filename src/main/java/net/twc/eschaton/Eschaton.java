@@ -1,6 +1,7 @@
 package net.twc.eschaton;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -13,6 +14,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.twc.eschaton.entity.ModEntityTypes;
+import net.twc.eschaton.entity.client.RiftSpearProjectileRenderer;
 import net.twc.eschaton.item.ModItems;
 import org.slf4j.Logger;
 
@@ -61,7 +63,10 @@ public class Eschaton {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
+            LOGGER.info("HELLO FROM SKIBIDI SETUP");
+
+            EntityRenderers.register(ModEntityTypes.RIFT_SPEAR.get(), RiftSpearProjectileRenderer::new);
+
         }
     }
 }

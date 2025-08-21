@@ -11,7 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.twc.eschaton.Eschaton;
-import net.twc.eschaton.item.custom.SpearItem;
+import net.twc.eschaton.item.custom.RiftSpearItem;
 
 import static net.minecraft.world.item.Item.BASE_ATTACK_DAMAGE_ID;
 import static net.minecraft.world.item.Item.BASE_ATTACK_SPEED_ID;
@@ -21,10 +21,10 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Eschaton.MOD_ID);
 
     public static final RegistryObject<Item> RIFT_SPEAR = ITEMS.register("rift_spear",
-            () -> new SpearItem(new Item.Properties().attributes(ItemAttributeModifiers.builder()
+            () -> new RiftSpearItem(new Item.Properties().attributes(ItemAttributeModifiers.builder()
                     .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 7.0, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
                     .add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.9F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build())
-                    .component(DataComponents.TOOL, SpearItem.createToolProperties())
+                    .component(DataComponents.TOOL, RiftSpearItem.createToolProperties())
                     .stacksTo(1)
                     .durability(315)
                     ));
