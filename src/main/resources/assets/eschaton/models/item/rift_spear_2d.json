@@ -1,0 +1,6 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "eschaton:item/rift_spear_2d"
+	}
+}

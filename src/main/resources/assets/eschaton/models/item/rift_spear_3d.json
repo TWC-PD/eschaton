@@ -1,0 +1,39 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Balls",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "eschaton:item/rift_spear"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 55],
+			"translation": [0, 4, 0.5],
+			"scale": [1.85, 1.85, 1.85]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, -55],
+			"translation": [0, 4, 0.5],
+			"scale": [1.85, 1.85, 1.85]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 37],
+			"translation": [1.13, 4.25, 0.25],
+			"scale": [1.17, 1.17, 1.17]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-40, 90, 0],
+			"translation": [1.13, 4.35, 0.25],
+			"scale": [1.17, 1.17, 1.17]
+		},
+		"ground": {
+			"rotation": [0, 0, -46],
+			"translation": [0, 4, 0]
+		},
+		"head": {
+			"rotation": [0, 0, -135],
+			"translation": [0, 20.25, 0],
+			"scale": [2, 2, 2]
+		}
+	}
+}
