@@ -1,5 +1,8 @@
 {
   "Spears": "",
   "item.eschaton.rift_spear": "Rift Iron Spear",
-  "entity.eschaton.rift_spear": "Rift Iron Spear"
+  "entity.eschaton.rift_spear": "Rift Iron Spear",
+
+  "Items": "",
+  "item.eschaton.rift_ingot": "Rift Iron Ingot"
 }

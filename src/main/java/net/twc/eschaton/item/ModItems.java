@@ -23,11 +23,16 @@ public class ModItems {
     public static final RegistryObject<Item> RIFT_SPEAR = ITEMS.register("rift_spear",
             () -> new RiftSpearItem(new Item.Properties().attributes(ItemAttributeModifiers.builder()
                     .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 7.0, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-                    .add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.9F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build())
+                    .add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.9F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                    .add(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(BASE_ATTACK_SPEED_ID, 4F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build())
                     .component(DataComponents.TOOL, RiftSpearItem.createToolProperties())
                     .stacksTo(1)
                     .durability(315)
                     ));
+
+    // Use this item as an example for other items
+    public static final RegistryObject<Item> RIFT_INGOT = ITEMS.register("rift_ingot",
+            () -> new Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

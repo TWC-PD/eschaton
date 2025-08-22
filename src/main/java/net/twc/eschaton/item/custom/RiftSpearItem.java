@@ -3,11 +3,14 @@ package net.twc.eschaton.item.custom;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Position;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
@@ -50,7 +53,7 @@ public class RiftSpearItem extends TridentItem implements ProjectileItem {
                         if (!pLevel.isClientSide) {
                             pStack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(pEntityLiving.getUsedItemHand()));
                             if (f == 0.0F) {
-                                RiftSpearProjectileEntity spearProjectile = new RiftSpearProjectileEntity(player, pLevel);
+                                RiftSpearProjectileEntity spearProjectile = new RiftSpearProjectileEntity(player, pLevel, pStack);
                                 spearProjectile.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F, 1.0F);
                                 if (player.hasInfiniteMaterials()) {
                                     spearProjectile.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
@@ -87,6 +90,19 @@ public class RiftSpearItem extends TridentItem implements ProjectileItem {
                     }
                 }
             }
+        }
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
+        ItemStack itemstack = pPlayer.getItemInHand(pHand);
+        if (isTooDamagedToUse(itemstack)) {
+            return InteractionResultHolder.fail(itemstack);
+        } else if (EnchantmentHelper.getTridentSpinAttackStrength(itemstack, pPlayer) > 0.0F && !pPlayer.isInWaterOrRain()) {
+            return InteractionResultHolder.fail(itemstack);
+        } else {
+            pPlayer.startUsingItem(pHand);
+            return InteractionResultHolder.consume(itemstack);
         }
     }
     

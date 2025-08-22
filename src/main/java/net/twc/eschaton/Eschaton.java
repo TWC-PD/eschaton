@@ -45,9 +45,13 @@ public class Eschaton {
         LOGGER.info("HI SIGMAS");
     }
 
+    // Creative Tabs
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.RIFT_SPEAR);
+        }
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.RIFT_INGOT);
         }
     }
 
